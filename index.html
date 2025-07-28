@@ -1205,6 +1205,40 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
+
+  <script>
+  // Script untuk mengganti background gambar sesuai slide
+  $(document).ready(function() {
+      // Array gambar untuk setiap slide
+      const backgroundImages = [
+          'images/cocoa-beans.jpg',      // Slide 1 - Banua Commodities
+          'images/seaweed.jpg', // Slide 2 - Agricultural Commodities  
+          'images/coconut-shell.jpg'  // Slide 3 - Marine Commodities
+      ];
+      
+      const bgBox = $('.bg-box img');
+      
+      // Event listener untuk carousel slide
+      $('#customCarousel1').on('slide.bs.carousel', function (e) {
+          const slideIndex = $(e.relatedTarget).index();
+          
+          // Ganti gambar background sesuai slide
+          if (backgroundImages[slideIndex]) {
+              bgBox.attr('src', backgroundImages[slideIndex]);
+          }
+      });
+      
+      // Event listener untuk indicator clicks
+      $('.carousel-indicators li').on('click', function() {
+          const slideIndex = $(this).data('slide-to');
+          
+          // Ganti gambar background sesuai slide
+          if (backgroundImages[slideIndex]) {
+              bgBox.attr('src', backgroundImages[slideIndex]);
+          }
+      });
+  });
+  </script>
   <!-- End Google Map -->
 
 </body>
