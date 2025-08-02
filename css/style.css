@@ -515,28 +515,23 @@ a:focus {
 
 .food_section .box .img-box {
   background: #f1f2f3;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 215px;
   border-radius: 0 0 0 45px;
   margin: -1px;
-  padding: 25px;
+  padding: 0; /* Ubah dari 25px ke 0 */
+  overflow: hidden; /* Tambahkan ini */
 }
 
 .food_section .box .img-box img {
-  max-width: 100%;
-  max-height: 145px;
-  -webkit-transition: all .2s;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
   transition: all .2s;
 }
-
 .food_section .box .detail-box {
   padding: 25px;
 }
